@@ -1,4 +1,4 @@
-room = "enterence hall"
+room = "entrance hall"
 has_key = False
 has_bag = False
 gold_looted = False
@@ -23,7 +23,7 @@ while room != 'exit':
     print('you are currently in ',room)
     print()
 
-    if room == 'enterence hall':
+    if room == 'entrance hall':
         choice = input('there is a corridor leading to the Library.\n Do you want to go there?(Yes/No)\n').lower().strip()
         print()
         if choice == 'yes':
@@ -36,10 +36,10 @@ while room != 'exit':
             if choice == 'yes':
                 has_key = True
 
-        choice = input('there is also another corridor leading to the Alchemy lab \n do you want to \n go back to enterence hall\t(type:back) \n or go to Alchemy lab\t\t(type:forward)\n').lower().strip()
+        choice = input('there is also another corridor leading to the Alchemy lab \n do you want to \n go back to entrance hall\t(type:back) \n or go to Alchemy lab\t\t(type:forward)\n').lower().strip()
         print()
         if choice == 'back':
-            room = "enterence hall"
+            room = "entrance hall"
         elif choice == 'forward':
             room = 'alchemy lab'
         
@@ -74,7 +74,7 @@ while room != 'exit':
         choice = input('WOW! there is so much gold here. might as well loot as much as you can.do yo agree(yes/no)').lower().strip()
         print()
         if choice == 'no':
-            print('come on man gold is gold. I know you are not Elon Musk')
+            print('come on man, gold is gold. I know you are not Elon Musk')
         else:
             if has_bag:
                 print('good thing you picked up that bag.\n\nNOW ALL THE GOLD IS OURS HAHAHAHA!')
