@@ -55,7 +55,7 @@ while room != 'exit':
         if choice == 'back':
             room = 'library'
         elif choice == 'forward':
-            choice = input('looks like the treasure room is locked.\nDo you want to open it?(Yes/No)')
+            choice = input('looks like the treasure room is locked.\nDo you want to open it?(Yes/No)\n')
             print()
             if choice == 'yes':
                 if has_key:
@@ -71,27 +71,30 @@ while room != 'exit':
     elif room == 'treasure room':
         print('good thing you picked up the key')
         print()
-        choice = input('WOW! there is so much gold here. might as well loot as much as you can.do yo agree(yes/no)').lower().strip()
-        print()
-        if choice == 'no':
-            print('come on man, gold is gold. I know you are not Elon Musk')
+        choice = 'no'
+        while choice == 'no':
+            choice = input('WOW! there is so much gold here. might as well loot as much as you can.do you agree(yes/no)\n').lower().strip()
+            print()
+            if choice == 'no':
+                print('come on man, gold is gold. I know you are not Elon Musk')
+                print()
+
+        if has_bag:
+            print('good thing you picked up that bag.\n\nNOW ALL THE GOLD IS OURS HAHAHAHA!')
+            gold_looted = True
+            print()
         else:
-            if has_bag:
-                print('good thing you picked up that bag.\n\nNOW ALL THE GOLD IS OURS HAHAHAHA!')
-                gold_looted = True
-                print()
-            else:
-                print('must be feeling stupid for not picking up the bag. Now go get it!!')
-                print()
-                choice = input('you should go back to alcmeny lab(yes/no)\n').lower().strip()
-                print()
-                if choice == 'yes':
-                    room = 'alchemy lab'
-            
-            if gold_looted:
-                print('OMG! the exit is opening.')
-                print()
-                room = 'exit'
+            print('must be feeling stupid for not picking up the bag. Now go get it!!')
+            print()
+            choice = input('you should go back to alchemy lab(yes/no)\n').lower().strip()
+            print()
+            if choice == 'yes':
+                room = 'alchemy lab'
         
-print('you are finally free\nNow go tell the TA to give me full marks because of my humor')
+        if gold_looted:
+            print('OMG! the exit is opening.')
+            print()
+            room = 'exit'
+        
+print('you are finally free\nNow go bribe the TA with this gold so that he gives me full marks')
 print()
