@@ -55,7 +55,7 @@ while room != 'exit':
         if choice == 'back':
             room = 'library'
         elif choice == 'forward':
-            choice = input('looks like the treasure room is locked.\nDo you want to open it?(Yes/No)\n')
+            choice = input('looks like the treasure room is locked.\nDo you want to open it?(Yes/No)\n').lower().strip()
             print()
             if choice == 'yes':
                 if has_key:
